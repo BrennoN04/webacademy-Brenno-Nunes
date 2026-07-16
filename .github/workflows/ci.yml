@@ -20,4 +20,5 @@ jobs:
               run: git --version
             - name: Exiba o conteudo do arquivo README.md
               run: cat README.md
-              
+            - name: Lista arquivos
+              run: ls ${{ github.workspace }}
