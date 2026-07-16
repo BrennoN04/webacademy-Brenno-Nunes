@@ -1,0 +1,21 @@
+name: Workflow 2.3
+on:
+    push:
+
+env:
+    CURSO: "Integração Contínua"
+
+jobs:
+    Atividade-2_3:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v5
+            - name: Exibir nome do curso
+              run: echo "Nome do Curso -${{ env.CURSO }}"
+            - name: Exibir usuário que executou workflow
+              run: echo "Usuário -${{ github.actor }}"
+            - name: Exibir nome do repositório
+              run: echo "Repositório -${{ github.repository }}"
+            - name: Exibir branch utilizada
+              run: echo "Branch -${{ github.ref }}"
