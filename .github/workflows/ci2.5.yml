@@ -1,0 +1,36 @@
+name: Workflow 2.5
+on:
+    push:
+jobs:
+    Job_1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v5
+            - name: data
+              run: date
+            - name: Versão do Git
+              run: git --version
+    
+    Job_2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout
+              uses: actions/checkout@v5
+            - name: Verificar se o Readme.md existe
+              run: |
+                if [ ! -f "README.md" ]; then
+                    echo "Erro: README.md não foi encontrado!"
+                    exit 1
+                fi
+            - name: Verificar se a LICENSE existe
+              run: |
+                if [ ! -f "LICENSE" ]; then
+                    echo "Erro: LICENSE não foi encontrada!"
+                    exit 1
+                fi
+            - name: Verificar se o arquivo .gitignore existe
+              run: |
+                if [ ! -f ".gitignore" ]; then
+                    echo "Erro: .gitignore não foi encontrado!"
+                    exit 1
