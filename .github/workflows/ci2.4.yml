@@ -1,9 +1,9 @@
-name: Workflow 2.3
+name: Workflow 2.4
 on:
     push:
 
 jobs:
-    Atividade-2_3:
+    Atividade-2_4:
         runs-on: ubuntu-latest
         steps:
             - name: checkout
