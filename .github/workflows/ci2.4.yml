@@ -10,22 +10,19 @@ jobs:
               uses: actions/checkout@v5
             - name: Verificar se o Readme.md existe
               run: |
-                if [ -f "README.md" ]; then
-                  echo "O arquivo README.md existe."
-                else
-                  echo "O arquivo README.md não existe."
+                if [ ! -f "README.md" ]; then
+                    echo "Erro: README.md não foi encontrado!"
+                    exit 1
                 fi
             - name: Verificar se a LICENSE existe
               run: |
-                if [ -f "LICENSE" ]; then
-                  echo "O arquivo LICENSE existe."
-                else
-                  echo "O arquivo LICENSE não existe."
+                if [ ! -f "LICENSE" ]; then
+                    echo "Erro: LICENSE não foi encontrada!"
+                    exit 1
                 fi
             - name: Verificar se o arquivo .gitignore existe
               run: |
-                if [ -f ".gitignore" ]; then
-                  echo "O arquivo .gitignore existe."
-                else
-                  echo "O arquivo .gitignore não existe."
+                if [ ! -f ".gitignore" ]; then
+                    echo "Erro: .gitignore não foi encontrado!"
+                    exit 1
                 fi
