@@ -12,3 +12,12 @@ jobs:
               run: ls ${{ github.workspace }}
             - name: Status
               run: echo "Status ${{ job.status }}."
+            - name: Data e hora
+              run: date
+            - name: Exibir sistema operacional
+              run: uname -a
+            - name: Exibir versão do Git
+              run: git --version
+            - name: Exiba o conteudo do arquivo README.md
+              run: cat README.md
+              
